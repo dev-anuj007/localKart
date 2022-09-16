@@ -1,0 +1,172 @@
+{
+    "env": {
+      "browser": true,
+      "es6": true
+    },
+    "extends": [
+      "airbnb",
+      "plugin:prettier/recommended",
+      "prettier",
+      "eslint:recommended",
+      "plugin:@typescript-eslint/eslint-recommended",
+      "plugin:@typescript-eslint/recommended"
+    ],
+    "plugins": [
+      "@typescript-eslint",
+      "react-hooks",
+      "unused-imports"
+    ],
+    "globals": {
+      "Atomics": "readonly",
+      "SharedArrayBuffer": "readonly"
+    },
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+      "ecmaFeatures": {
+        "jsx": true
+      },
+      "ecmaVersion": 2018,
+      "sourceType": "module"
+    },
+    // TODO: remove this such that the default "error" is used, once this is fixed.
+    "rules": {
+      "@typescript-eslint/ban-types": [
+        "error",
+        {
+          "types": {
+            "object": false
+          },
+          "extendDefaults": true
+        }
+      ],
+      "@typescript-eslint/explicit-function-return-type": [
+        "warn",
+        {
+          "allowExpressions": true
+        }
+      ],
+      // TODO: remove this such that the default "error" is used, once this is fixed.
+      "@typescript-eslint/no-empty-function": "warn",
+      // TODO: remove this such that the default "error" is used, once this is fixed.
+      "@typescript-eslint/no-non-null-asserted-optional-chain": "warn",
+      "@typescript-eslint/no-use-before-define": "off",
+      // TODO(hugh): remove this such that the default "error" is used in a future diff to reduce noise.
+      "arrow-body-style": "off",
+      // Output from GraphQL codegen includes underscores, which violates this
+      // rule.
+      "camelcase": "off",
+      // note you must disable the base rule as it can report incorrect errors
+      "no-unused-vars": "off", // or "@typescript-eslint/no-unused-vars": "off",
+      "no-use-before-define": "off",
+      "unused-imports/no-unused-imports": "error",
+      "unused-imports/no-unused-vars": [
+        "warn",
+        {
+          "vars": "all",
+          "varsIgnorePattern": "^_",
+          "args": "after-used",
+          "argsIgnorePattern": "^_"
+        }
+      ],
+      "import/prefer-default-export": "off",
+      "import/extensions": 0,
+      "import/first": "error", // all imports are at the top of the file
+      "import/newline-after-import": "error", // a newline after the imports.
+      "import/no-duplicates": "error", // merges import statements of the same file
+      "import/order": [
+        "error",
+        {
+          "newlines-between": "always",
+          "alphabetize": {
+            "order": "asc",
+            "caseInsensitive": true
+          }
+        }
+      ],
+      // TODO: remove this such that the default "error" is used, once this is fixed..
+      "react/jsx-no-useless-fragment": "warn",
+      // TODO: remove this such that the default "error" is used, once this is fixed..
+      "jsx-a11y/click-events-have-key-events": "warn",
+      // TODO: remove this such that the default "error" is used, once this is fixed..
+      "jsx-a11y/no-static-element-interactions": "warn",
+      "max-len": [
+        "warn",
+        {
+          "code": 80,
+          "tabWidth": 2,
+          "comments": 80,
+          "ignoreComments": false,
+          "ignoreTrailingComments": true,
+          "ignoreUrls": true,
+          "ignoreStrings": true,
+          "ignoreTemplateLiterals": true,
+          "ignoreRegExpLiterals": true
+        }
+      ],
+      // TODO: remove this such that the default "error" is used, once this is fixed..
+      "no-multi-str": "warn",
+      "no-plusplus": "off",
+      // TODO: remove this such that the default "error" is used, once this is fixed..
+      "no-shadow": "warn",
+      "no-unused-expressions": [
+        "error",
+        {
+          // Enable usages such as: a && b()
+          "allowShortCircuit": true,
+          // Enable usages such as: a ? b : c()
+          "allowTernary": true
+        }
+      ],
+      "react/destructuring-assignment": "off",
+      "react/jsx-filename-extension": [
+        "warn",
+        {
+          "extensions": [
+            ".js",
+            ".jsx",
+            ".tsx"
+          ]
+        }
+      ],
+      "react/jsx-props-no-spreading": "off",
+      "react/jsx-uses-react": "off", // Not required because of the new JSX transform introduced in React 17
+      "react/no-array-index-key": 0,
+      // TODO: remove this such that the default "error" is used, once this is fixed..
+      "react/no-unused-prop-types": "warn",
+      "react/no-danger": "error", // Prevent XSS attacks by never having dangerouslySetInnerHTML
+      // TODO: remove this such that the default "error" is used, once this is fixed..
+      "react/no-unescaped-entities": "warn",
+      // TODO: remove this such that the default "error" is used, once this is fixed..
+      "react/prop-types": "off",
+      "react/react-in-jsx-scope": "off", // Not required because of the new JSX transform introduced in React 17
+      "react/require-default-props": "off",
+      "react-hooks/rules-of-hooks": "error",
+      // TODO: remove this such that the default "error" is used, once this is fixed..
+      "react-hooks/exhaustive-deps": "warn",
+      "jsx-a11y/label-has-associated-control": [
+        2,
+        {
+          "controlComponents": [
+            "Checkbox"
+          ]
+        }
+      ]
+    },
+    "settings": {
+      "import/resolver": {
+        "node": {
+          "extensions": [
+            ".js",
+            ".jsx",
+            ".ts",
+            ".tsx"
+          ],
+          "moduleDirectory": [
+            "node_modules",
+            "src/"
+          ]
+        }
+      }
+    }
+  }
+  
