@@ -1,11 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import reportWebVitals from './reportWebVitals';
+import { MainRouter } from './main-router';
+import { BrowserRouter } from 'react-router-dom';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <h1>localKart</h1>
+    <BrowserRouter>
+      <MainRouter />
+    </BrowserRouter>
   </React.StrictMode>
 );
 
